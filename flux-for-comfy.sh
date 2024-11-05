@@ -139,6 +139,12 @@ function provisioning_get_nodes() {
                 pip_install -r "${requirements}"
             fi
         fi
+        if [[ "$repo" == "https://github.com/Gourieff/comfyui-reactor-node" ]]; then
+            if [[ -f "${path}/install.py" ]]; then
+                printf "Running install.py for %s...\n" "${repo}"
+                ( cd "$path" && python install.py )
+            fi
+        fi
     done
 }
 
