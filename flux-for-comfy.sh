@@ -20,6 +20,8 @@ PIP_PACKAGES=(
 
 NODES=(
     "https://github.com/Gourieff/comfyui-reactor-node"
+    "https://github.com/rgthree/rgthree-comfy.git"
+    "https://github.com/gseth/ControlAltAI-Nodes.git"
 )
 
 CHECKPOINT_MODELS=(
