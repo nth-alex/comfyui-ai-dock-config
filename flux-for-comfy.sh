@@ -19,7 +19,7 @@ PIP_PACKAGES=(
 )
 
 NODES=(
-    
+    "https://github.com/Gourieff/comfyui-reactor-node"
 )
 
 CHECKPOINT_MODELS=(
