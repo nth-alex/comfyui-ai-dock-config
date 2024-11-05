@@ -31,12 +31,22 @@ CLIP_MODELS=(
 )
 
 UNET_MODELS=(
+    "https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/flux1-dev-fp8.safetensors"
 )
 
 VAE_MODELS=(
+    "https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/ae.safetensors"
 )
 
 LORA_MODELS=(
+    "https://huggingface.co/nthalexx/loras-collection/resolve/main/fantasy-lora.safetensors"
+    "https://huggingface.co/nthalexx/loras-collection/resolve/main/horror-lora.safetensors",
+    "https://huggingface.co/nthalexx/loras-collection/resolve/main/flux-unsensored-lora.safetensors",
+    "https://huggingface.co/nthalexx/loras-collection/resolve/main/FLUXTASTIC_V3.safetensors",
+    "https://huggingface.co/nthalexx/loras-collection/resolve/main/MS_Milf_Style_V1_Flux.safetensors",
+    "https://huggingface.co/nthalexx/loras-collection/resolve/main/hourglassv2_flux.safetensors",
+    "https://huggingface.co/nthalexx/loras-collection/resolve/main/nipples-lora.safetensors",
+    "https://huggingface.co/nthalexx/loras-collection/resolve/main/woman_dildo_flux_sevenof9_v1.safetensors",
 )
 
 ESRGAN_MODELS=(
@@ -56,10 +66,6 @@ function provisioning_start() {
     fi
     source /opt/ai-dock/etc/environment.sh
     source /opt/ai-dock/bin/venv-set.sh comfyui
-
-    # download flux model
-    UNET_MODELS+=("https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/flux1-dev-fp8.safetensors")
-    VAE_MODELS+=("https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/ae.safetensors")
 
     provisioning_print_header
     provisioning_get_apt_packages
