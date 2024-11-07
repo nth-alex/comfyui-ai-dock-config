@@ -142,7 +142,16 @@ function provisioning_get_nodes() {
         if [[ "$repo" == "https://github.com/Gourieff/comfyui-reactor-node" ]]; then
             if [[ -f "${path}/install.py" ]]; then
                 printf "Running install.py for %s...\n" "${repo}"
-                ( cd "$path" && python install.py )
+                PYTHON_PATH=$(which python || which python3)
+                if [ -n "$PYTHON_PATH" ]; then
+                    PYTHON_DIR=$(dirname "$PYTHON_PATH")
+                    export PATH="$PATH:$PYTHON_DIR"
+                    echo "Python знайдено за адресою: $PYTHON_PATH"
+                    echo "PATH оновлено: $PATH"
+                    ( cd "$path" && "$PYTHON_PATH" install.py )
+                else
+                    echo "Python не знайдено. Перевірте, чи він встановлений."
+                fi
             fi
         fi
     done
