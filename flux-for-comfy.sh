@@ -22,6 +22,7 @@ NODES=(
     "https://github.com/Gourieff/comfyui-reactor-node"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/gseth/ControlAltAI-Nodes"
+    "https://github.com/MohammadAboulEla/ComfyUI-iTools"
 )
 
 CHECKPOINT_MODELS=(
