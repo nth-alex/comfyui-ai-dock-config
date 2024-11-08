@@ -134,6 +134,8 @@ function provisioning_get_nodes() {
         dir="${repo##*/}"
         path="/opt/ComfyUI/custom_nodes/${dir}"
         requirements="${path}/requirements.txt"
+        install_script="${path}/install.py"  # Шлях до install.py
+
         if [[ -d $path ]]; then
             if [[ ${AUTO_UPDATE,,} != "false" ]]; then
                 printf "Updating node: %s...\n" "${repo}"
@@ -148,6 +150,12 @@ function provisioning_get_nodes() {
             if [[ -e $requirements ]]; then
                 pip_install -r "${requirements}"
             fi
+        fi
+
+        # Перевірка наявності install.py та запуск
+        if [[ -f $install_script ]]; then
+            printf "Running install script: %s\n" "$install_script"
+            python3 "$install_script"
         fi
     done
 }
