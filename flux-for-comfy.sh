@@ -37,6 +37,10 @@ UNET_MODELS=(
     "https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/flux1-dev-fp8.safetensors"
 )
 
+INSIGHTFACE_MODELS=(
+    "https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/inswapper_128.onnx"
+)
+
 VAE_MODELS=(
     "https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/ae.safetensors"
 )
@@ -98,6 +102,9 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
+    provisioning_get_models \
+        "${WORKSPACE}/storage/stable_diffusion/models/insightface" \
+        "${INSIGHTFACE_MODELS[@]}"
     provisioning_print_end
 }
 
@@ -139,21 +146,6 @@ function provisioning_get_nodes() {
             git clone "${repo}" "${path}" --recursive
             if [[ -e $requirements ]]; then
                 pip_install -r "${requirements}"
-            fi
-        fi
-        if [[ "$repo" == "https://github.com/Gourieff/comfyui-reactor-node" ]]; then
-            if [[ -f "${path}/install.py" ]]; then
-                printf "Running install.py for %s...\n" "${repo}"
-                PYTHON_PATH=$(which python || which python3)
-                if [ -n "$PYTHON_PATH" ]; then
-                    PYTHON_DIR=$(dirname "$PYTHON_PATH")
-                    export PATH="$PATH:$PYTHON_DIR"
-                    echo "Python знайдено за адресою: $PYTHON_PATH"
-                    echo "PATH оновлено: $PATH"
-                    ( cd "$path" && "$PYTHON_PATH" install.py )
-                else
-                    echo "Python не знайдено. Перевірте, чи він встановлений."
-                fi
             fi
         fi
     done
