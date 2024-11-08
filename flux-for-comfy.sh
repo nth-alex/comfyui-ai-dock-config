@@ -37,10 +37,6 @@ UNET_MODELS=(
     "https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/flux1-dev-fp8.safetensors"
 )
 
-INSIGHTFACE_MODELS=(
-    "https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/inswapper_128.onnx"
-)
-
 VAE_MODELS=(
     "https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/ae.safetensors"
 )
@@ -102,9 +98,6 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
-    provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/insightface" \
-        "${INSIGHTFACE_MODELS[@]}"
     provisioning_print_end
 }
 
