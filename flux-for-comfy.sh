@@ -14,7 +14,7 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    "tqdm"
+    
 )
 
 NODES=(
@@ -154,7 +154,7 @@ function provisioning_get_nodes() {
         # Перевірка наявності install.py та запуск
         if [[ -f $install_script ]]; then
             printf "Running install script: %s\n" "$install_script"
-            python3 "$install_script"
+            /opt/environments/python/comfyui/bin/python "$install_script"
         fi
     done
 }
