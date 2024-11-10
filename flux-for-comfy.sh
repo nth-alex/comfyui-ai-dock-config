@@ -26,6 +26,7 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
+    "https://huggingface.co/jasperai/Flux.1-dev-Controlnet-Upscaler/resolve/main/diffusion_pytorch_model.safetensors"
 )
 
 CLIP_MODELS=(
