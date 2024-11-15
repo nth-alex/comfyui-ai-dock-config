@@ -53,6 +53,7 @@ LORA_MODELS=(
     "https://huggingface.co/nthalexx/loras-collection/resolve/main/scg-anatomy-female-v2.safetensors"
     "https://huggingface.co/nthalexx/loras-collection/resolve/main/flux-myth-lora.safetensors"
     "https://huggingface.co/nthalexx/loras-collection/resolve/main/body_horror-000007.safetensors"
+    "https://huggingface.co/nthalexx/loras-collection/resolve/main/RPGv6-itr15.safetensors"
 )
 
 ESRGAN_MODELS=(
