@@ -50,9 +50,9 @@ LORA_MODELS=(
     "https://huggingface.co/nthalexx/loras-collection/resolve/main/MS_Milf_Style_V1_Flux.safetensors"
     "https://huggingface.co/nthalexx/loras-collection/resolve/main/hourglassv2_flux.safetensors"
     "https://huggingface.co/nthalexx/loras-collection/resolve/main/nipples-lora.safetensors"
-    "https://huggingface.co/nthalexx/loras-collection/resolve/main/woman_dildo_flux_sevenof9_v1.safetensors"
     "https://huggingface.co/nthalexx/loras-collection/resolve/main/scg-anatomy-female-v2.safetensors"
     "https://huggingface.co/nthalexx/loras-collection/resolve/main/flux-myth-lora.safetensors"
+    "https://huggingface.co/nthalexx/loras-collection/resolve/main/body_horror-000007.safetensors"
 )
 
 ESRGAN_MODELS=(
