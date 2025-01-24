@@ -23,6 +23,7 @@ NODES=(
     "https://github.com/gseth/ControlAltAI-Nodes"
     "https://github.com/MohammadAboulEla/ComfyUI-iTools"
     "https://github.com/yolain/ComfyUI-Easy-Use"
+    "https://github.com/city96/ComfyUI-GGUF"
 )
 
 CHECKPOINT_MODELS=(
@@ -35,7 +36,7 @@ CLIP_MODELS=(
 )
 
 UNET_MODELS=(
-    "https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/flux1-dev-fp8.safetensors"
+    "https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-Q8_0.gguf"
 )
 
 VAE_MODELS=(
